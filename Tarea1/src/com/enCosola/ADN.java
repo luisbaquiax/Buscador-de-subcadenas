@@ -29,6 +29,7 @@ public class ADN {
         System.out.print("INgrese el segundo ADN :");
         adn2 = scanner.next();
         System.out.println("Patrón repetido " + verifcarPatronRepetido(adn1, adn2));
+        System.out.println("trabajando en la rama en consola");
     }
 
     public String verifcarPatronRepetido(String adn1, String adn2) {
