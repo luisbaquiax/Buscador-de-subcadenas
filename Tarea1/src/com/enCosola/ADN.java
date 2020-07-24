@@ -23,18 +23,28 @@ public class ADN {
     }
 
     public ADN() {
-
-        System.out.print("INgrese el primer ADN :");
+       
+        System.out.print("INgrese el primer ADN: ");
         adn1 = scanner.next();
-        System.out.print("INgrese el segundo ADN :");
+        System.out.print("INgrese el segundo ADN: ");
         adn2 = scanner.next();
         System.out.println("Patrón repetido " + verifcarPatronRepetido(adn1, adn2));
         System.out.println("trabajando en la rama en consola");
     }
 
     public String verifcarPatronRepetido(String adn1, String adn2) {
-
+        char[] a = adn1.toCharArray();
+        char[] b = adn2.toCharArray();
         String patronRepetido = "";
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < b.length; j++) {
+                if (a[i] == b[j]) {
+                    patronRepetido += a[i];
+                }
+
+            }
+
+        }
         return patronRepetido;
     }
 }
