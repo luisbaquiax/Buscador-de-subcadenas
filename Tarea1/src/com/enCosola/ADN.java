@@ -6,6 +6,7 @@
 package com.enCosola;
 
 import java.util.Scanner;
+import javax.swing.JTextField;
 
 /**
  *
@@ -16,6 +17,7 @@ public class ADN {
     public static Scanner scanner = new Scanner(System.in);
     private String adn1;
     private String adn2;
+    
 
     public ADN(String adn1, String adn2) {
         this.adn1 = adn1;
