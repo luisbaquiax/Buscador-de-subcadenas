@@ -5,11 +5,15 @@
  */
 package com.ingerfaz;
 
+import com.enCosola.ADN;
+
 /**
  *
  * @author luis
  */
 public class VericandoADN extends javax.swing.JFrame {
+
+    private ADN adn;
 
     /**
      * Creates new form VericandoADN
@@ -97,7 +101,12 @@ public class VericandoADN extends javax.swing.JFrame {
 
     private void btnVERIFICARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVERIFICARActionPerformed
         // TODO add your handling code here:
+        if(txtADN1.getText().isEmpty() || txtADN2.getText().isEmpty()){
         
+        }else {
+        
+        }
+
     }//GEN-LAST:event_btnVERIFICARActionPerformed
 
 
