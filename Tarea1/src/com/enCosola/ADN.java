@@ -47,4 +47,29 @@ public class ADN {
         }
         return patronRepetido;
     }
+
+    public static Scanner getScanner() {
+        return scanner;
+    }
+
+    public static void setScanner(Scanner scanner) {
+        ADN.scanner = scanner;
+    }
+
+    public String getAdn1() {
+        return adn1;
+    }
+
+    public void setAdn1(String adn1) {
+        this.adn1 = adn1;
+    }
+
+    public String getAdn2() {
+        return adn2;
+    }
+
+    public void setAdn2(String adn2) {
+        this.adn2 = adn2;
+    }
+    
 }
