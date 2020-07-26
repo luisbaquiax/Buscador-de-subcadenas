@@ -23,22 +23,23 @@ public class ADN {
     }
 
     public ADN() {
-       
+
         System.out.print("INgrese el primer ADN: ");
         adn1 = scanner.next();
         System.out.print("INgrese el segundo ADN: ");
         adn2 = scanner.next();
+
         System.out.println("Patrón repetido " + verifcarPatronRepetido(adn1, adn2));
-       
     }
 
     public String verifcarPatronRepetido(String adn1, String adn2) {
         char[] a = adn1.toCharArray();
         char[] b = adn2.toCharArray();
         String patronRepetido = "";
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < b.length; j++) {
-                if (a[i] == b[j]) {
+
+        for (int i = 0; i < a.length - 1; i++) {
+            for (int j = 0; j < b.length - 1; j++) {
+                if (a[i] == b[j] && (a[i + 1] == b[j + 1])) {
                     patronRepetido += a[i];
                 }
 
@@ -46,14 +47,6 @@ public class ADN {
 
         }
         return patronRepetido;
-    }
-
-    public static Scanner getScanner() {
-        return scanner;
-    }
-
-    public static void setScanner(Scanner scanner) {
-        ADN.scanner = scanner;
     }
 
     public String getAdn1() {
@@ -71,5 +64,5 @@ public class ADN {
     public void setAdn2(String adn2) {
         this.adn2 = adn2;
     }
-    
+
 }
