@@ -5,11 +5,8 @@
  */
 package com;
 
-<<<<<<< HEAD
 import com.ingerfaz.*;
-=======
-import com.enCosola.ADN;
->>>>>>> enConsola
+
 
 /**
  *
