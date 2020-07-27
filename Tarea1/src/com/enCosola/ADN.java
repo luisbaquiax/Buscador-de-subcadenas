@@ -45,8 +45,8 @@ public class ADN {
         char[] b = adn2.toCharArray();
         String patronRepetido = "";
 
-        for (int i = 0; i < a.length - 1; i++) {
-            for (int j = 0; j < b.length - 1; j++) {
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < b.length; j++) {
                 if (a[i] == b[j]) {
                     patronRepetido += a[i];
                 }
