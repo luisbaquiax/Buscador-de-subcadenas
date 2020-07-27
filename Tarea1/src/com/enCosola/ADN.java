@@ -17,7 +17,9 @@ public class ADN {
     public static Scanner scanner = new Scanner(System.in);
     private String adn1;
     private String adn2;
-    
+
+    private String[] arreglo1 = new String[100];
+    private String[] arreglo2 = new String[100];
 
     public ADN(String adn1, String adn2) {
         this.adn1 = adn1;
@@ -31,7 +33,11 @@ public class ADN {
         System.out.print("INgrese el segundo ADN: ");
         adn2 = scanner.next();
 
-        System.out.println("Patrón repetido " + verifcarPatronRepetido(adn1, adn2));
+        char[] c1 = adn1.toCharArray();
+        char[] c2 = adn2.toCharArray();
+
+        System.out.println("Patron repetido " + verifcarPatronRepetido(adn1, adn2));
+
     }
 
     public String verifcarPatronRepetido(String adn1, String adn2) {
@@ -49,6 +55,26 @@ public class ADN {
 
         }
         return patronRepetido;
+    }
+
+    public void verifcarPatronRepetido(String caracter, int indice, char[] cadena) {
+        String patronRepetido = "";
+        for (int i = indice; i < cadena.length; i++) {
+            String combinacion = caracter + cadena[i];
+            System.out.println(combinacion);
+            insertarCadena(combinacion, this.arreglo1);
+            verifcarPatronRepetido(combinacion, ++indice, cadena);
+        }
+    }
+
+    public void insertarCadena(String cad, String[] cadena) {
+        for (int i = 0; i < cadena.length; i++) {
+            if (cadena[i] == null) {
+                cadena[i] = cad;
+                return;
+            }
+
+        }
     }
 
     public String getAdn1() {
