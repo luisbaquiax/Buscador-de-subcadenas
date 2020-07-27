@@ -5,8 +5,7 @@
  */
 package com;
 
-import com.ingerfaz.*;
-
+import com.interfaz.VericandoADN;
 
 /**
  *
