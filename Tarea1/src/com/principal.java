@@ -8,7 +8,6 @@ package com;
 import com.enCosola.ADN;
 import com.ingerfaz.*;
 
-
 /**
  *
  * @author luis
@@ -20,9 +19,7 @@ public class principal {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //ADN a = new ADN();
-        VericandoADN a  = new VericandoADN();
-        a.show();
+        ADN a = new ADN();
     }
-    
+
 }
