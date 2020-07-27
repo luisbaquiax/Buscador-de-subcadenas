@@ -5,8 +5,7 @@
  */
 package com;
 
-import com.enCosola.ADN;
-import com.ingerfaz.*;
+import com.interfaz.VerifcandoADN;
 
 /**
  *
@@ -19,7 +18,7 @@ public class principal {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        VericandoADN a = new VericandoADN();
+        VerifcandoADN a = new VerifcandoADN();
         a.show();
     }
 

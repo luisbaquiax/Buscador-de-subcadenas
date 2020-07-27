@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ingerfaz;
+package com.interfaz;
 
 import com.enCosola.ADN;
 import javax.swing.JOptionPane;
@@ -12,14 +12,14 @@ import javax.swing.JOptionPane;
  *
  * @author luis
  */
-public class VericandoADN extends javax.swing.JFrame {
+public class VerifcandoADN extends javax.swing.JFrame {
 
     private ADN adn;
 
     /**
      * Creates new form VericandoADN
      */
-    public VericandoADN() {
+    public VerifcandoADN() {
         initComponents();
         super.setTitle("DECODIFICADOR DE ADN");
         super.setResizable(false);
@@ -40,8 +40,8 @@ public class VericandoADN extends javax.swing.JFrame {
         txtADN2 = new javax.swing.JTextField();
         btnVERIFICAR = new javax.swing.JButton();
         txtVErificado = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,14 +58,14 @@ public class VericandoADN extends javax.swing.JFrame {
 
         txtVErificado.setEditable(false);
 
-        jTextField1.setText("                 PATRÓN REPETIDO");
-
-        jButton1.setText("Realizar nueva comparación ");
+        jButton1.setText("Realizar nueva verificación");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        jLabel3.setText("PATRÓN REPETIDO");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,25 +73,27 @@ public class VericandoADN extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(52, 52, 52)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel2))
+                            .addGap(29, 29, 29)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtADN1)
+                                .addComponent(txtADN2, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(108, 108, 108)
+                            .addComponent(txtVErificado, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jButton1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnVERIFICAR, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtADN1)
-                            .addComponent(txtADN2, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(108, 108, 108)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(txtVErificado, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnVERIFICAR, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(156, 156, 156)
+                        .addComponent(jLabel3)))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -112,8 +114,8 @@ public class VericandoADN extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(txtVErificado, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addComponent(jLabel3)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -121,13 +123,15 @@ public class VericandoADN extends javax.swing.JFrame {
 
     private void btnVERIFICARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVERIFICARActionPerformed
         // TODO add your handling code here:
+
         if (txtADN1.getText().isEmpty() || txtADN2.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Por favor lleno todos los campos", "CAMPOS VACÍOS", JOptionPane.INFORMATION_MESSAGE);
+
         } else {
             this.adn = new ADN(this.txtADN1.getText(), this.txtADN2.getText());
-            this.txtVErificado.setText(this.adn.verifcarPatronRepetido(this.txtADN1.getText(), this.txtADN2.getText()));
-
+            this.txtVErificado.setText(this.adn.verificarPatronRepetido(this.txtADN1.getText(), this.txtADN2.getText()));
         }
+
 
     }//GEN-LAST:event_btnVERIFICARActionPerformed
 
@@ -143,7 +147,7 @@ public class VericandoADN extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField txtADN1;
     private javax.swing.JTextField txtADN2;
     private javax.swing.JTextField txtVErificado;
