@@ -6,7 +6,6 @@
 package com;
 
 import com.enCosola.ADN;
-import com.ingerfaz.*;
 
 /**
  *

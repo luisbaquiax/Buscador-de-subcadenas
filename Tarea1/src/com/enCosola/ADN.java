@@ -6,7 +6,6 @@
 package com.enCosola;
 
 import java.util.Scanner;
-import javax.swing.JTextField;
 
 /**
  *
@@ -36,8 +35,44 @@ public class ADN {
         char[] c1 = adn1.toCharArray();
         char[] c2 = adn2.toCharArray();
 
-        System.out.println("Patron repetido " + verifcarPatronRepetido(adn1, adn2));
+        //System.out.println("Patron repetido " + verifcarPatronRepetido(adn1, adn2));
+        for (int i = 0; i < c1.length; i++) {
+            verifcarCombinaciones(c1[i] + "", i, c1, arreglo1);
 
+        }
+        for (int i = 0; i < c2.length; i++) {
+            verifcarCombinaciones(c2[i] + "", i, c2, arreglo2);
+
+        }
+        System.out.println("CADENA: " + cadenaRepetida(arreglo1, adn2));
+
+    }
+
+    public String repiticion(String[] arreglo1, String[] arreglo2) {
+        String repetido = "";
+
+        for (int i = 0; i < arreglo1.length; i++) {
+            if (arreglo1[i] != null) {
+                for (int j = 0; j < arreglo2.length; j++) {
+                    if (arreglo2[j] != null && (arreglo1[i].equals(arreglo2[j])) && (arreglo1[i].length() > arreglo2[j].length())) {
+                        return arreglo1[i];
+                    }
+                }
+            }
+
+        }
+        return repetido;
+    }
+
+    public String cadenaRepetida(String[] cadena, String ad2) {
+        String masGrande = "";
+        for (int i = 0; i < cadena.length; i++) {
+            if (ad2.contains(cadena[i]) && (cadena[i] != null)) {
+               return cadena[i];
+            }
+
+        }
+        return masGrande;
     }
 
     public String verifcarPatronRepetido(String adn1, String adn2) {
@@ -57,13 +92,13 @@ public class ADN {
         return patronRepetido;
     }
 
-    public void verifcarPatronRepetido(String caracter, int indice, char[] cadena) {
-        String patronRepetido = "";
+    public void verifcarCombinaciones(String caracter, int indice, char[] cadena, String[] arreglo) {
+       
         for (int i = indice; i < cadena.length; i++) {
             String combinacion = caracter + cadena[i];
             System.out.println(combinacion);
-            insertarCadena(combinacion, this.arreglo1);
-            verifcarPatronRepetido(combinacion, ++indice, cadena);
+            insertarCadena(combinacion, arreglo);
+            verifcarCombinaciones(combinacion, ++indice, cadena, arreglo);
         }
     }
 
