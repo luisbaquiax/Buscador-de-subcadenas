@@ -123,17 +123,15 @@ public class VerifcandoADN extends javax.swing.JFrame {
 
     private void btnVERIFICARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVERIFICARActionPerformed
         // TODO add your handling code here:
+
         if (txtADN1.getText().isEmpty() || txtADN2.getText().isEmpty()) {
-            if (txtADN1.getText().isEmpty() || txtADN2.getText().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Por favor lleno todos los campos", "CAMPOS VACÍOS", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Por favor lleno todos los campos", "CAMPOS VACÍOS", JOptionPane.INFORMATION_MESSAGE);
 
-            } else {
-
-                this.adn = new ADN(this.txtADN1.getText(), this.txtADN2.getText());
-                this.adn.verificarPatronRepetido(this.txtADN1.getText(), this.txtADN2.getText());
-
-            }
+        } else {
+            this.adn = new ADN(this.txtADN1.getText(), this.txtADN2.getText());
+            this.txtVErificado.setText(this.adn.verificarPatronRepetido(this.txtADN1.getText(), this.txtADN2.getText()));
         }
+
 
     }//GEN-LAST:event_btnVERIFICARActionPerformed
 
