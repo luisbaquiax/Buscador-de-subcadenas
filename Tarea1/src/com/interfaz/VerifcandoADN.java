@@ -12,14 +12,14 @@ import javax.swing.JOptionPane;
  *
  * @author luis
  */
-public class VericandoADN extends javax.swing.JFrame {
+public class VerifcandoADN extends javax.swing.JFrame {
 
     private ADN adn;
 
     /**
      * Creates new form VericandoADN
      */
-    public VericandoADN() {
+    public VerifcandoADN() {
         initComponents();
         super.setTitle("DECODIFICADOR DE ADN");
         super.setResizable(false);
@@ -58,9 +58,14 @@ public class VericandoADN extends javax.swing.JFrame {
 
         txtVErificado.setEditable(false);
 
-        jButton1.setText("Hacer nueva verificación");
+        jButton1.setText("Realizar nueva verificación");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-        jLabel3.setText("PATRON REPETIDO");
+        jLabel3.setText("PATRÓN REPETIDO");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -84,10 +89,10 @@ public class VericandoADN extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addContainerGap()
                             .addComponent(jButton1)
-                            .addGap(18, 18, 18)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(btnVERIFICAR, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(157, 157, 157)
+                        .addGap(156, 156, 156)
                         .addComponent(jLabel3)))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
@@ -126,9 +131,17 @@ public class VericandoADN extends javax.swing.JFrame {
 
                 this.adn = new ADN(this.txtADN1.getText(), this.txtADN2.getText());
                 this.adn.verificarPatronRepetido(this.txtADN1.getText(), this.txtADN2.getText());
-              
+
             }
+        }
+
     }//GEN-LAST:event_btnVERIFICARActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.txtADN1.setText("");
+        this.txtADN2.setText("");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
